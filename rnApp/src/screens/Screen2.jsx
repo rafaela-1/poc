@@ -28,7 +28,7 @@ export default function Screen2({ navigation, route }) {
     <SafeLayout>
       {isLoading && <ActivityIndicator size="large" />}
       <Container>
-        <ItemText>Screen 2 with game code: {gameCode}</ItemText>
+        <ItemText>Screen 2 with params from ios app: {gameCode}</ItemText>
         <FlashList
           data={data}
           stimatedItemSize={70}

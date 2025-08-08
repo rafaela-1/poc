@@ -23,7 +23,7 @@ export default function Screen1({navigation, route}) {
   return (
     <SafeLayout>
       <Container>
-        <ItemText>Screen 1 with game code: {gameCode}</ItemText>
+        <ItemText>Screen 1 with params from ios app: {gameCode}</ItemText>
         <AnimationContainer>  
           <ItemText>Lottie Animation:</ItemText>
             <LottieAnimation

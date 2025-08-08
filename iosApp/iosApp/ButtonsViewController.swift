@@ -29,7 +29,7 @@ class ButtonsViewController: UIViewController {
             let module1Button = createNavigationButton(title: "Module 1") { [weak self] in
                 guard let self = self else { return }
                 let initialProps: [String: Any] = ["gameCode": "module-1-params"]
-                let reactNativeVC = ReactNativeViewController(moduleName: "rnApp", initialProperties: initialProps)
+                let reactNativeVC = ReactNativeViewController(moduleName: "rnAppModule1", initialProperties: initialProps)
                 if let navigationController = self.navigationController {
                     navigationController.pushViewController(reactNativeVC, animated: true)
                 } else {
@@ -43,7 +43,7 @@ class ButtonsViewController: UIViewController {
             let module2Button = createNavigationButton(title: "Module 2") { [weak self] in
                 guard let self = self else { return }
                 let initialProps: [String: Any] = ["gameCode": "module-2-params"]
-                let reactNativeVC = ReactNativeViewController(moduleName: "rnApp", initialProperties: initialProps)
+                let reactNativeVC = ReactNativeViewController(moduleName: "rnAppModule2", initialProperties: initialProps)
                 if let navigationController = self.navigationController {
                     navigationController.pushViewController(reactNativeVC, animated: true)
                 } else {
