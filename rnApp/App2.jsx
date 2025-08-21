@@ -12,9 +12,10 @@ const App2 = ({ gameCode }) => {
   return (
     <SafeAreaProvider initialMetrics={initialWindowMetrics}>
       <SafeLayout>
-        <Container>
-          <ItemText>Hello from module 2 with params from ios app: {gameCode}</ItemText>
-          <Button title="Press me" onPress={showAlert} />
+        <Container style={{ justifyContent: 'center', alignItems: 'center' }}>
+          <ItemText>Brownfield Communication Example</ItemText>
+          <Button title="Send to Native" onPress={() => {}} />
+          <Button title="Request Data" onPress={() => {}} />
         </Container>
       </SafeLayout>
     </SafeAreaProvider>

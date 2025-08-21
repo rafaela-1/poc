@@ -29,6 +29,16 @@ target 'rnApp' do
 
 
   post_install do |installer|
+    # installer.pods_project.targets.each do |target|
+
+      # Set bridging header path if your library requires it
+    #   if target.name == 'react-native-brownfield-communication'
+    #     target.build_configurations.each do |config|
+    #       config.build_settings['SWIFT_OBJC_BRIDGING_HEADER'] = '$(SRCROOT)/../node_modules/react-native-brownfield-communication/ios/BrownfieldCommunication-Bridging-Header.h'
+    #     end
+    #   end
+    # end
+
     # https://github.com/facebook/react-native/blob/main/packages/react-native/scripts/react_native_pods.rb#L197-L202
     react_native_post_install(
       installer,

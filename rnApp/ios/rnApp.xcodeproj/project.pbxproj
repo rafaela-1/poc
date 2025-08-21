@@ -11,13 +11,13 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		D6C7ADAE8096B1DF0FE937F8 /* libPods-rnApp-rnReactApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8C0D67DF3D60E6318D818BB /* libPods-rnApp-rnReactApp.a */; };
 		DE9C84B62E460AE200655B46 /* rnReactApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9C84AE2E460AE200655B46 /* rnReactApp.framework */; };
 		DE9C84B72E460AE200655B46 /* rnReactApp.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE9C84AE2E460AE200655B46 /* rnReactApp.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DE9C84BF2E460AE800655B46 /* rnReactApp.docc in Sources */ = {isa = PBXBuildFile; fileRef = DE9C84BC2E460AE800655B46 /* rnReactApp.docc */; };
 		DE9C84C02E460AE800655B46 /* rnReactApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9C84BD2E460AE800655B46 /* rnReactApp.swift */; };
 		DE9C84C32E460BE100655B46 /* ReactBrownfieldRootViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9C84C22E460BE100655B46 /* ReactBrownfieldRootViewManager.swift */; };
-		E4300755BDDACB995C8A7706 /* Pods_rnApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB98D83E9F25348063E42672 /* Pods_rnApp.framework */; };
-		F6BB692553E81C777D2F22D9 /* Pods_rnApp_rnReactApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1FF1E6307777B7BF1D3C88 /* Pods_rnApp_rnReactApp.framework */; };
+		E58CC27E64008B1F036151B2 /* libPods-rnApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6187DCB1A4B6DBCFAC056E49 /* libPods-rnApp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,17 +50,17 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = rnApp/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = rnApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = rnApp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		3B1FF1E6307777B7BF1D3C88 /* Pods_rnApp_rnReactApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rnApp_rnReactApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-rnApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rnApp.debug.xcconfig"; path = "Target Support Files/Pods-rnApp/Pods-rnApp.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-rnApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rnApp.release.xcconfig"; path = "Target Support Files/Pods-rnApp/Pods-rnApp.release.xcconfig"; sourceTree = "<group>"; };
+		6187DCB1A4B6DBCFAC056E49 /* libPods-rnApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rnApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = rnApp/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = rnApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BBE7031414D244817E21EFED /* Pods-rnApp-rnReactApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rnApp-rnReactApp.debug.xcconfig"; path = "Target Support Files/Pods-rnApp-rnReactApp/Pods-rnApp-rnReactApp.debug.xcconfig"; sourceTree = "<group>"; };
-		DB98D83E9F25348063E42672 /* Pods_rnApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rnApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE9C84AE2E460AE200655B46 /* rnReactApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = rnReactApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE9C84BC2E460AE800655B46 /* rnReactApp.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = rnReactApp.docc; sourceTree = "<group>"; };
 		DE9C84BD2E460AE800655B46 /* rnReactApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rnReactApp.swift; sourceTree = "<group>"; };
 		DE9C84C22E460BE100655B46 /* ReactBrownfieldRootViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactBrownfieldRootViewManager.swift; sourceTree = "<group>"; };
+		E8C0D67DF3D60E6318D818BB /* libPods-rnApp-rnReactApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rnApp-rnReactApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -70,7 +70,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE9C84B62E460AE200655B46 /* rnReactApp.framework in Frameworks */,
-				E4300755BDDACB995C8A7706 /* Pods_rnApp.framework in Frameworks */,
+				E58CC27E64008B1F036151B2 /* libPods-rnApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6BB692553E81C777D2F22D9 /* Pods_rnApp_rnReactApp.framework in Frameworks */,
+				D6C7ADAE8096B1DF0FE937F8 /* libPods-rnApp-rnReactApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,8 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				DB98D83E9F25348063E42672 /* Pods_rnApp.framework */,
-				3B1FF1E6307777B7BF1D3C88 /* Pods_rnApp_rnReactApp.framework */,
+				6187DCB1A4B6DBCFAC056E49 /* libPods-rnApp.a */,
+				E8C0D67DF3D60E6318D818BB /* libPods-rnApp-rnReactApp.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
