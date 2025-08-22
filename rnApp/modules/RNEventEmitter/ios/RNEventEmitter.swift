@@ -12,8 +12,21 @@ import React
 @objc(RNEventEmitter)
 class RNEventEmitter: RCTEventEmitter {
     
+    static var shared: RNEventEmitter?
+    
+    override init() {
+        super.init()
+        RNEventEmitter.shared = self
+    }
+    
     override func supportedEvents() -> [String]! {
-        return []
+        return ["DataFromNative"]
+    }
+    
+    @objc static func sendDataToReactNative(_ data: [String: Any]) {
+        DispatchQueue.main.async {
+            shared?.sendEvent(withName: "DataFromNative", body: data)
+        }
     }
     
     @objc
@@ -23,22 +36,14 @@ class RNEventEmitter: RCTEventEmitter {
         
         // Convert NSDictionary to Swift dictionary for better display
         if let data = params as? [String: Any] {
-            print("Formatted data:")
-            for (key, value) in data {
-                print("  \(key): \(value)")
-            }
-            
             // Send notification to update UI
-            print("Sending notification to update UI...")
             DispatchQueue.main.async {
                 NotificationCenter.default.post(
                     name: NSNotification.Name("JSDataReceived"),
                     object: data
                 )
-                print("Notification sent with data: \(data)")
             }
         }
-        print("=====================================")
     }
 }
 

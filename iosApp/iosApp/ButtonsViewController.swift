@@ -36,7 +36,10 @@ class ButtonsViewController: UIViewController {
             stackView.spacing = 12
             stackView.translatesAutoresizingMaskIntoConstraints = false
 
-            // module 1 
+  
+
+            // 3. Create buttons
+            // module 1
             let module1Button = createButton(title: "Module 1") { [weak self] in
                 guard let self = self else { return }
                 let initialProps: [String: Any] = ["gameCode": "module-1-params"]
@@ -50,7 +53,7 @@ class ButtonsViewController: UIViewController {
             }
             stackView.addArrangedSubview(module1Button)
 
-            // module 2 
+            // module 2
             let module2Button = createButton(title: "Module 2") { [weak self] in
                 guard let self = self else { return }
                 
@@ -68,12 +71,12 @@ class ButtonsViewController: UIViewController {
                 self.view.addSubview(reactNativeVC.view)
                 reactNativeVC.view.translatesAutoresizingMaskIntoConstraints = false
                 
-                // Position below the buttons and label with custom height
+                // Position below the stack view to avoid overlap with buttons
                 NSLayoutConstraint.activate([
-                    reactNativeVC.view.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 260),
+                    reactNativeVC.view.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 20),
                     reactNativeVC.view.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
                     reactNativeVC.view.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-                    reactNativeVC.view.heightAnchor.constraint(equalToConstant: 200) 
+                    reactNativeVC.view.heightAnchor.constraint(equalToConstant: 300) 
                 ])
                 
                 reactNativeVC.didMove(toParent: self)
@@ -95,9 +98,27 @@ class ButtonsViewController: UIViewController {
             }
             stackView.addArrangedSubview(module3Button)
             
-
+            // Send data to React Native button
+            let sendToRNButton = createButton(title: "Send Data to RN") { [weak self] in
+                guard let self = self else { return }
+                
+                let dataToSend: [String: Any] = [
+                    "message": "Hello from iOS!",
+                    "timestamp": Date().timeIntervalSince1970,
+                    "source": "ButtonsViewController",
+                    "buttonPressed": "Send Data to RN"
+                ]
+                
+                // Call the RNEventEmitter method to send data to React Native
+                if let rnEventEmitterClass = NSClassFromString("RNEventEmitter") as? NSObject.Type {
+                    rnEventEmitterClass.perform(NSSelectorFromString("sendDataToReactNative:"), with: dataToSend)
+                }
+                
+                print("Sent data to React Native: \(dataToSend)")
+            }
+            stackView.addArrangedSubview(sendToRNButton)
             
-            // 4. Add data display section
+            // display data from react native
             let dataDisplayView = createDataDisplayView()
             stackView.addArrangedSubview(dataDisplayView)
             
@@ -160,7 +181,7 @@ class ButtonsViewController: UIViewController {
         
         // Title label
         let titleLabel = UILabel()
-        titleLabel.text = "📱 Data from React Native"
+        titleLabel.text = "Data from React Native"
         titleLabel.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         titleLabel.textColor = .systemBlue
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -168,7 +189,7 @@ class ButtonsViewController: UIViewController {
         
         // Message label for data display
         let messageLabel = UILabel()
-        messageLabel.text = "⏳ Waiting for data..."
+        messageLabel.text = "Waiting for data..."
         messageLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         messageLabel.textColor = .systemGray
         messageLabel.numberOfLines = 0
@@ -203,7 +224,7 @@ class ButtonsViewController: UIViewController {
             var displayText = ""
             
             if let message = data["message"] as? String {
-                displayText += "📨 Message: \(message)\n"
+                displayText += "Message: \(message)\n"
             }
             
 //            if let timestamp = data["timestamp"] as? String {

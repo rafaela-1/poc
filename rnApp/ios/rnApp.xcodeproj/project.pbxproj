@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		01D109E35280DCE04CDE985D /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
-		26743876FB9A3A136DCEA317 /* Pods_rnApp_rnReactApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B287A57E0E1CD1EA6F8B6BD2 /* Pods_rnApp_rnReactApp.framework */; };
-		45BD761FD4E7B768F8EBD5C6 /* Pods_rnApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21594F8284B12A426C4D4F69 /* Pods_rnApp.framework */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		B268579F57538C7A12FA2F88 /* Pods_rnApp_rnReactApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B37B5AD43DFFC8A354D96B63 /* Pods_rnApp_rnReactApp.framework */; };
+		BC1DA8898EF3DEE1069342F7 /* Pods_rnApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EA37B3B0ABEA55D701346C2 /* Pods_rnApp.framework */; };
 		DE9C84B62E460AE200655B46 /* rnReactApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9C84AE2E460AE200655B46 /* rnReactApp.framework */; };
 		DE9C84B72E460AE200655B46 /* rnReactApp.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE9C84AE2E460AE200655B46 /* rnReactApp.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DE9C84BF2E460AE800655B46 /* rnReactApp.docc in Sources */ = {isa = PBXBuildFile; fileRef = DE9C84BC2E460AE800655B46 /* rnReactApp.docc */; };
@@ -50,12 +50,12 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = rnApp/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = rnApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = rnApp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		21594F8284B12A426C4D4F69 /* Pods_rnApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rnApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EA37B3B0ABEA55D701346C2 /* Pods_rnApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rnApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-rnApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rnApp.debug.xcconfig"; path = "Target Support Files/Pods-rnApp/Pods-rnApp.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-rnApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rnApp.release.xcconfig"; path = "Target Support Files/Pods-rnApp/Pods-rnApp.release.xcconfig"; sourceTree = "<group>"; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = rnApp/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = rnApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B287A57E0E1CD1EA6F8B6BD2 /* Pods_rnApp_rnReactApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rnApp_rnReactApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B37B5AD43DFFC8A354D96B63 /* Pods_rnApp_rnReactApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rnApp_rnReactApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE7031414D244817E21EFED /* Pods-rnApp-rnReactApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rnApp-rnReactApp.debug.xcconfig"; path = "Target Support Files/Pods-rnApp-rnReactApp/Pods-rnApp-rnReactApp.debug.xcconfig"; sourceTree = "<group>"; };
 		DE9C84AE2E460AE200655B46 /* rnReactApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = rnReactApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE9C84BC2E460AE800655B46 /* rnReactApp.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = rnReactApp.docc; sourceTree = "<group>"; };
@@ -70,7 +70,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE9C84B62E460AE200655B46 /* rnReactApp.framework in Frameworks */,
-				45BD761FD4E7B768F8EBD5C6 /* Pods_rnApp.framework in Frameworks */,
+				BC1DA8898EF3DEE1069342F7 /* Pods_rnApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26743876FB9A3A136DCEA317 /* Pods_rnApp_rnReactApp.framework in Frameworks */,
+				B268579F57538C7A12FA2F88 /* Pods_rnApp_rnReactApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,8 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				21594F8284B12A426C4D4F69 /* Pods_rnApp.framework */,
-				B287A57E0E1CD1EA6F8B6BD2 /* Pods_rnApp_rnReactApp.framework */,
+				1EA37B3B0ABEA55D701346C2 /* Pods_rnApp.framework */,
+				B37B5AD43DFFC8A354D96B63 /* Pods_rnApp_rnReactApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
