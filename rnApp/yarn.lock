@@ -5997,6 +5997,10 @@ react-is@^19.1.0:
   version "0.0.0"
   uid ""
 
+"react-native-event-emitter@link:./modules/RNEventEmitter":
+  version "0.0.0"
+  uid ""
+
 react-native-gesture-handler@2.27.2:
   version "2.27.2"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-2.27.2.tgz#d52e839e9cb225e75c9b6fce7438979ca6917512"

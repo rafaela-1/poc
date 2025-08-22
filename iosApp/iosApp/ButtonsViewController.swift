@@ -19,7 +19,15 @@ class ButtonsViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.view.backgroundColor = .systemBackground
         self.title = "iOS app"
-
+        
+        // Setup notification observer for React Native data
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleJSDataReceived),
+            name: NSNotification.Name("JSDataReceived"),
+            object: nil
+        )
+            
     
             // 1. Create a stack view to hold the buttons
             let stackView = UIStackView()
@@ -60,12 +68,12 @@ class ButtonsViewController: UIViewController {
                 self.view.addSubview(reactNativeVC.view)
                 reactNativeVC.view.translatesAutoresizingMaskIntoConstraints = false
                 
-                // Position below the buttons and label
+                // Position below the buttons and label with custom height
                 NSLayoutConstraint.activate([
                     reactNativeVC.view.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 260),
                     reactNativeVC.view.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
                     reactNativeVC.view.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-                    reactNativeVC.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+                    reactNativeVC.view.heightAnchor.constraint(equalToConstant: 200) 
                 ])
                 
                 reactNativeVC.didMove(toParent: self)
@@ -87,16 +95,11 @@ class ButtonsViewController: UIViewController {
             }
             stackView.addArrangedSubview(module3Button)
             
-            // 4. Add text label under button 3
-            let messageLabel = UILabel()
-            messageLabel.text = "Receive Message from rn"
-            messageLabel.textAlignment = .left
-            messageLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
-            messageLabel.textColor = .systemGray
-            messageLabel.translatesAutoresizingMaskIntoConstraints = false
-            self.messageLabel = messageLabel
+
             
-            stackView.addArrangedSubview(messageLabel)
+            // 4. Add data display section
+            let dataDisplayView = createDataDisplayView()
+            stackView.addArrangedSubview(dataDisplayView)
             
             // 4. add stackView in view
             self.view.addSubview(stackView)
@@ -143,7 +146,86 @@ class ButtonsViewController: UIViewController {
         }
     }
     
-
+    // MARK: - Cleanup
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    private func createDataDisplayView() -> UIView {
+        let containerView = UIView()
+        containerView.backgroundColor = UIColor.systemGray6
+        containerView.layer.cornerRadius = 12
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        // Title label
+        let titleLabel = UILabel()
+        titleLabel.text = "📱 Data from React Native"
+        titleLabel.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        titleLabel.textColor = .systemBlue
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        containerView.addSubview(titleLabel)
+        
+        // Message label for data display
+        let messageLabel = UILabel()
+        messageLabel.text = "⏳ Waiting for data..."
+        messageLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        messageLabel.textColor = .systemGray
+        messageLabel.numberOfLines = 0
+        messageLabel.lineBreakMode = .byWordWrapping
+        messageLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.messageLabel = messageLabel
+        containerView.addSubview(messageLabel)
+        
+        // Setup constraints
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 12),
+            titleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 12),
+            titleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -12),
+            
+            messageLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
+            messageLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 12),
+            messageLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -12),
+            messageLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -12)
+        ])
+        
+        return containerView
+    }
+    
+    @objc private func handleJSDataReceived(notification: Notification) {
+        guard let data = notification.object as? [String: Any] else {
+            print("Failed to extract data from notification")
+            return
+        }
+        
+        DispatchQueue.main.async {
+            // Format the received data for display
+            var displayText = ""
+            
+            if let message = data["message"] as? String {
+                displayText += "📨 Message: \(message)\n"
+            }
+            
+//            if let timestamp = data["timestamp"] as? String {
+//                displayText += "⏰ Timestamp: \(timestamp)\n"
+//            }
+//            
+//            if let userId = data["userId"] as? String {
+//                displayText += "👤 User ID: \(userId)\n"
+//            }
+            
+            // Add any other fields
+            for (key, value) in data {
+                if !["message", "timestamp", "userId"].contains(key) {
+                    displayText += "🔧 \(key): \(value)\n"
+                }
+            }
+            
+            self.messageLabel?.text = displayText.isEmpty ? "No data received" : displayText
+            print("Updated message label with: \(displayText)")
+        }
+    }
+    
+
     
 }
