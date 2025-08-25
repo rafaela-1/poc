@@ -1,18 +1,15 @@
-import React, { useEffect } from 'react';
-import { Button } from 'react-native';
+import React from 'react';
 import SafeLayout from '../components/SafeLayout';
-import { Container, ItemText, ButtonContainer } from '../components/StyledComponents';
+import { Heading, ItemText, Container } from '../components/StyledComponents';
 
-export default function Screen3({ navigation, route }) {
-  const gameCode = route.params?.gameCode;
+export default function Screen3({ route }) {
+  const { post } = route.params;
 
   return (
     <SafeLayout>
       <Container>
-        <ItemText>Screen 3 with params from ios app: {gameCode}</ItemText>
-        <ButtonContainer>
-          <Button title="press me" onPress={() => {}} />
-        </ButtonContainer>
+        <Heading>{post.title}</Heading>
+        <ItemText>{post.body}</ItemText>
       </Container>
     </SafeLayout>
   );
